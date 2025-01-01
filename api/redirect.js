@@ -8,18 +8,19 @@ export default async function handler(req, res) {
   }
 
   // Initialize Appwrite client
-  const client = new sdk.client()
+  const client = new sdk.Client()
     .setEndpoint(process.env.APPWRITE_ENDPOINT)
-    .setProject(process.env.APPWRITE_PROJECT)
-    .setKey(process.env.APPWRITE_API_KEY);
+    .setProject(process.env.APPWRITE_PROJECT);
 
-  const database = new sdk.databases(client);
+  const database = new sdk.Databases(client);
 
   try {
     // Retrieve the document by shortCode
-    const result = await database.listDocuments(process.env.URL_DB, process.env.URL_COL, [
-      `shortCode=${shortCode}`,
-    ]);
+    const result = await database.listDocuments(
+      process.env.URL_DB,
+      process.env.URL_COL,
+      [`shortCode=${shortCode}`]
+    );
 
     if (result.documents.length === 0) {
       return res.status(404).json({ error: "Short URL not found" });
