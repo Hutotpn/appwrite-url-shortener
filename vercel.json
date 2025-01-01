@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/api/redirect.js?shortCode=$1"
+      "dest": "/api/redirect.js?:path*"
     }
   ]
 }
