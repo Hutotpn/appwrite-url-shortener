@@ -1,4 +1,4 @@
-import { Client, Database } from "node-appwrite";
+const sdk = require("node-appwrite");
 
 export default async function handler(req, res) {
   const { shortCode } = req.query;
@@ -8,13 +8,12 @@ export default async function handler(req, res) {
   }
 
   // Initialize Appwrite client
-  const client = new Client();
-  client
+  const client = new sdk.client()
     .setEndpoint(process.env.APPWRITE_ENDPOINT)
     .setProject(process.env.APPWRITE_PROJECT)
     .setKey(process.env.APPWRITE_API_KEY);
 
-  const database = new Database(client);
+  const database = new sdk.databases(client);
 
   try {
     // Retrieve the document by shortCode
