@@ -3,6 +3,8 @@ const sdk = require("node-appwrite");
 export default async function handler(req, res) {
   const { shortCode } = req.query;
 
+  console.log("shortCode", shortCode);
+
   if (!shortCode) {
     return res.status(400).json({ error: "shortCode is required" });
   }
