@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     const result = await database.listDocuments(
       process.env.URL_DB,
       process.env.URL_COL,
-      [`shortCode=${shortCode}`]
+      [Query.equal("shortCode", shortCode)]
     );
 
     if (result.documents.length === 0) {
