@@ -1,0 +1,25 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "Huto URL Shortener",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hutotpn/url-shortener.git"
+  },
+  "keywords": [
+    "url-shortener"
+  ],
+  "author": "Hutotpn",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Hutotpn/url-shortener/issues"
+  },
+  "homepage": "https://github.com/Hutotpn/url-shortener#readme",
+  "dependencies": {
+    "node-appwrite": "^14.1.0"
+  }
+}
