@@ -24,17 +24,11 @@ export default async function handler(req, res) {
       shortCode
     );
 
-    console.log(result)
-
-    if (result.documents.length === 0) {
-      return res.status(404).json({ error: "Short URL not found" });
-    }
-
-    const longURL = result.documents[0].longURL;
+    const longURL = result.longURL;
 
     // Redirect to the original URL
     return res.redirect(301, longURL);
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    return res.status(404).json({ error: error.message });
   }
 }
