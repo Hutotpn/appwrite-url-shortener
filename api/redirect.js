@@ -18,11 +18,13 @@ export default async function handler(req, res) {
 
   try {
     // Retrieve the document by shortCode
-    const result = await database.listDocuments(
+    const result = await database.getDocument(
       process.env.URL_DB,
       process.env.URL_COL,
-      [Query.equal("shortCode", shortCode)]
+      shortCode
     );
+
+    console.log(result)
 
     if (result.documents.length === 0) {
       return res.status(404).json({ error: "Short URL not found" });
