@@ -8,6 +8,14 @@
   ],
   "routes": [
     {
+      "src": "/"
+      "dest": "/index.html"
+    },
+    {
+      "src": "/index.html",
+      "dest": "/index.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/api/redirect.js?shortCode=$1"
     }
