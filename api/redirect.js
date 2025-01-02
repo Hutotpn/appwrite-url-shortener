@@ -27,7 +27,7 @@ export default async function handler(req, res) {
     const longURL = result.longURL;
 
     // Redirect to the original URL
-    return res.redirect(301, longURL);
+    return res.redirect(302, longURL);
   } catch (error) {
     return res.status(404).json({ error: error.message });
   }
