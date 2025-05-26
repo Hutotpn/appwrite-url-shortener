@@ -1,5 +1,12 @@
 const sdk = require("node-appwrite");
 
+// Initialize Appwrite client
+const client = new sdk.Client()
+  .setEndpoint(process.env.APPWRITE_ENDPOINT)
+  .setProject(process.env.APPWRITE_PROJECT);
+
+const database = new sdk.Databases(client);
+
 export default async function handler(req, res) {
   const { shortCode } = req.query;
 
@@ -8,13 +15,6 @@ export default async function handler(req, res) {
   if (!shortCode) {
     return res.status(400).json({ error: "shortCode is required" });
   }
-
-  // Initialize Appwrite client
-  const client = new sdk.Client()
-    .setEndpoint(process.env.APPWRITE_ENDPOINT)
-    .setProject(process.env.APPWRITE_PROJECT);
-
-  const database = new sdk.Databases(client);
 
   try {
     // Retrieve the document by shortCode
