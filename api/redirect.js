@@ -40,8 +40,8 @@ export default async function handler(req, res) {
           <body>
             <div class="box">
               <h2>⚠️ You're visiting from a deprecated domain</h2>
-              <p><strong>example.old</strong> will be shut down on <strong>30 November</strong>.</p>
-              <p>Please update your bookmarks to the new domain: <a href="https://example.com">example.com</a></p>
+              <p><strong>hutotpn.live</strong> will be shut down on <strong>November 30, 2025</strong>.</p>
+              <p>Please update your bookmarks to the new domain: <a href="https://hutotpn.com">hutotpn.com</a></p>
               <p>Redirecting to: <a href="${longURL}">${longURL}</a> in 5 seconds...</p>
             </div>
           </body>
