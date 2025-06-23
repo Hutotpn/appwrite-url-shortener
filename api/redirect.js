@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     );
     const longURL = result.longURL;
 
-    if (host && host.endsWith("example.old")) {
+    if (host && host.endsWith("hutotpn.live")) {
       res.setHeader("Content-Type", "text/html");
       return res.send(`
         <!DOCTYPE html>
