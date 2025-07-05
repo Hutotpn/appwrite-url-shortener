@@ -41,7 +41,10 @@ export default async function handler(req, res) {
       property="og:description"
       content="just a small heads-up - Huto URL Shortener"
     />
-    <meta property="og:image" content="/images/deprecated.png" />
+    <meta
+      property="og:image"
+      content="https://go.hutotpn.com/images/deprecated.png"
+    />
     <meta http-equiv="refresh" content="5; url=${longURL}" />
   </head>
   <body class="font-display h-screen">
@@ -112,7 +115,7 @@ export default async function handler(req, res) {
       property="og:description"
       content="URL Not found - Huto URL Shortener"
     />
-    <meta property="og:image" content="/images/404.png" />
+    <meta property="og:image" content="https://go.hutotpn.com/images/404.png" />
   </head>
   <body class="font-display h-screen">
     <main
